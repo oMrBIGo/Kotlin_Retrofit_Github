@@ -2,13 +2,18 @@ package com.nathit.kotlin_retrofit_github
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.databinding.DataBindingUtil
+import com.nathit.kotlin_retrofit_github.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var binding: ActivityMainBinding
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        val binding =
+            DataBindingUtil.setContentView<ActivityMainBinding>(this,R.layout.activity_main)
+        binding.viewModel = Model()
+        binding.lifecycleOwner = this@MainActivity
+
+
     }
 }
