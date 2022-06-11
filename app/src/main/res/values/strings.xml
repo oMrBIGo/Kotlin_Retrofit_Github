@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Kotlin_Retrofit_Github</string>
+    <string name="loading">Loading...</string>
 </resources>

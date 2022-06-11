@@ -10,7 +10,7 @@ class Model : ViewModel() {
     val btnUser = MutableLiveData<String>("AllUsers")
     val btnEmojis = MutableLiveData<String>("AllEmojis")
     val btnEvents = MutableLiveData<String>("AllEvents")
-    val btnPublic = MutableLiveData<String>("AllPublic")
+    val btnGists = MutableLiveData<String>("AllGists")
 
     fun btnUserClicked() {
         btnUser.value = "Loading..."
@@ -24,8 +24,8 @@ class Model : ViewModel() {
         btnEvents.value = "Loading..."
     }
 
-    fun btnPublicClicked() {
-        btnPublic.value = "Loading..."
+    fun btnGistsClicked() {
+        btnGists.value = "Loading..."
     }
 
 }

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
@@ -20,87 +19,80 @@
             android:id="@+id/tvSample"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:padding="10dp"
-            android:text="@{viewModel.title}"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:textSize="25sp"
-            android:hint="Loading..."/>
+            android:gravity="center"
+            android:hint="@string/loading"
+            android:padding="10dp"
+            android:text="@{viewModel.title}"
+            android:textSize="25sp" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="10dp"
             android:layout_below="@id/tvSample"
             android:orientation="vertical">
 
-            <LinearLayout
+            <Button
+                android:id="@+id/btnUser"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="10dp"
-                tools:ignore="UselessParent">
+                android:layout_weight="1"
+                android:backgroundTint="#8BC34A"
+                android:elevation="3dp"
+                android:hint="@string/loading"
+                android:onClick="@{() -> viewModel.btnUserClicked()}"
+                android:padding="40dp"
+                android:text="@{viewModel.btnUser}"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
 
-                <Button
-                    android:id="@+id/btnUser"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:layout_weight="1"
-                    android:padding="40dp"
-                    android:text="@{viewModel.btnUser}"
-                    android:onClick="@{() -> viewModel.btnUserClicked()}"
-                    android:hint=""
-                    android:textSize="20sp"/>
-
-                <Button
+            <Button
                     android:id="@+id/btnEmojis"
-                    android:layout_width="wrap_content"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginEnd="10dp"
                     android:layout_weight="1"
+                    android:backgroundTint="#03A9F4"
+                    android:elevation="3dp"
+                    android:hint="@string/loading"
+                    android:onClick="@{() -> viewModel.btnEmojisClicked()}"
                     android:padding="40dp"
                     android:text="@{viewModel.btnEmojis}"
-                    android:onClick="@{() -> viewModel.btnEmojisClicked()}"
-                    android:hint=""
-                    android:textSize="20sp"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="10dp"
-                tools:ignore="UselessParent">
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
 
                 <Button
                     android:id="@+id/btnEvents"
-                    android:layout_width="wrap_content"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
                     android:layout_weight="1"
+                    android:backgroundTint="#E91E63"
+                    android:elevation="3dp"
+                    android:hint="@string/loading"
+                    android:onClick="@{() -> viewModel.btnEventsClicked()}"
                     android:padding="40dp"
                     android:text="@{viewModel.btnEvents}"
-                    android:onClick="@{() -> viewModel.btnEventsClicked()}"
-                    android:hint=""
-                    android:textSize="20sp"/>
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
 
                 <Button
-                    android:id="@+id/btnPublic"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/btnGists"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginEnd="10dp"
                     android:layout_weight="1"
+                    android:backgroundTint="#FFEB3B"
+                    android:elevation="3dp"
+                    android:hint="@string/loading"
+                    android:onClick="@{() -> viewModel.btnGistsClicked()}"
                     android:padding="40dp"
-                    android:text="@{viewModel.btnPublic}"
-                    android:onClick="@{() -> viewModel.btnPublicClicked()}"
-                    android:hint=""
-                    android:textSize="20sp"/>
-
-            </LinearLayout>
+                    android:text="@{viewModel.btnGists}"
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
 
         </LinearLayout>
 

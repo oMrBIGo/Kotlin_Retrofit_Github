@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Kotlin_Retrofit_Github">
         <activity
+            android:name=".AllEmojiActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AllUsersActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
