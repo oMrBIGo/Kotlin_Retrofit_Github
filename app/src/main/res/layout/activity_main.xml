@@ -11,23 +11,99 @@
 
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".MainActivity">
 
         <TextView
             android:id="@+id/tvSample"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="10dp"
             android:text="@{viewModel.title}"
-            android:onClick="@{() -> viewModel.textClicked()}"
-            android:textSize="30sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:textSize="25sp"
+            android:hint="Loading..."/>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvSample"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp"
+                tools:ignore="UselessParent">
+
+                <Button
+                    android:id="@+id/btnUser"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight="1"
+                    android:padding="40dp"
+                    android:text="@{viewModel.btnUser}"
+                    android:onClick="@{() -> viewModel.btnUserClicked()}"
+                    android:hint=""
+                    android:textSize="20sp"/>
+
+                <Button
+                    android:id="@+id/btnEmojis"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_weight="1"
+                    android:padding="40dp"
+                    android:text="@{viewModel.btnEmojis}"
+                    android:onClick="@{() -> viewModel.btnEmojisClicked()}"
+                    android:hint=""
+                    android:textSize="20sp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp"
+                tools:ignore="UselessParent">
+
+                <Button
+                    android:id="@+id/btnEvents"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight="1"
+                    android:padding="40dp"
+                    android:text="@{viewModel.btnEvents}"
+                    android:onClick="@{() -> viewModel.btnEventsClicked()}"
+                    android:hint=""
+                    android:textSize="20sp"/>
+
+                <Button
+                    android:id="@+id/btnPublic"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_weight="1"
+                    android:padding="40dp"
+                    android:text="@{viewModel.btnPublic}"
+                    android:onClick="@{() -> viewModel.btnPublicClicked()}"
+                    android:hint=""
+                    android:textSize="20sp"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
 
 </layout>
