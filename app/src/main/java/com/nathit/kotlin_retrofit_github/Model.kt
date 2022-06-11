@@ -12,20 +12,4 @@ class Model : ViewModel() {
     val btnEvents = MutableLiveData<String>("AllEvents")
     val btnGists = MutableLiveData<String>("AllGists")
 
-    fun btnUserClicked() {
-        btnUser.value = "Loading..."
-    }
-
-    fun btnEmojisClicked() {
-        btnEmojis.value = "Loading..."
-    }
-
-    fun btnEventsClicked() {
-        btnEvents.value = "Loading..."
-    }
-
-    fun btnGistsClicked() {
-        btnGists.value = "Loading..."
-    }
-
 }

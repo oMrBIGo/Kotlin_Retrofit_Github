@@ -10,10 +10,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Kotlin_Retrofit_Github">
         <activity
-            android:name=".AllEmojiActivity"
+            android:name=".Activity.AllGistsActivity"
             android:exported="false" />
         <activity
-            android:name=".AllUsersActivity"
+            android:name=".Activity.AllEventsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.AllEmojiActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.AllUsersActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

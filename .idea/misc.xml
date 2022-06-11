@@ -4,8 +4,10 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/nathi/Desktop/Android_Dev/Kotlin_Retrofit_Github/app/src/main/res/layout/activity_all_emoji.xml" value="0.2601851851851852" />
+        <entry key="..\:/Users/nathi/Desktop/Android_Dev/Kotlin_Retrofit_Github/app/src/main/res/layout/activity_all_events.xml" value="0.2601851851851852" />
         <entry key="..\:/Users/nathi/Desktop/Android_Dev/Kotlin_Retrofit_Github/app/src/main/res/layout/activity_all_users.xml" value="0.3109375" />
         <entry key="..\:/Users/nathi/Desktop/Android_Dev/Kotlin_Retrofit_Github/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/nathi/Desktop/Android_Dev/Kotlin_Retrofit_Github/app/src/main/res/layout/user_item.xml" value="0.2601851851851852" />
       </map>
     </option>
   </component>
