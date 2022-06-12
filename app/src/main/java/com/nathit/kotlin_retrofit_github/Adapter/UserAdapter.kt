@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.nathit.kotlin_retrofit_github.Adapter.UserAdapter.*
 import com.nathit.kotlin_retrofit_github.R
 import com.nathit.kotlin_retrofit_github.UserModelItem
+import com.squareup.picasso.Picasso
 
 class UserAdapter(private val context: Context, private val users_List: List<UserModelItem>):
     RecyclerView.Adapter<ViewHolder>() {
@@ -29,6 +30,7 @@ class UserAdapter(private val context: Context, private val users_List: List<Use
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.uidTv.text = users_List[position].id.toString()
         holder.titleTv.text = users_List[position].login
+        Picasso.get().load(users_List[position].avatar_url).into(holder.photoTv)
     }
 
     override fun getItemCount(): Int {
