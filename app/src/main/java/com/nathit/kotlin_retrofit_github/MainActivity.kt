@@ -22,27 +22,22 @@ class MainActivity : AppCompatActivity() {
         binding.lifecycleOwner = this@MainActivity
 
         binding.btnUser.setOnClickListener {
-            val intent = Intent(this, AllUsersActivity::class.java)
-            intent.putExtra("user_url", BASE_URL)
-            startActivity(intent)
+            startActivity(Intent(this,AllUsersActivity::class.java))
         }
 
         binding.btnEmojis.setOnClickListener {
             val intent = Intent(this, AllEmojiActivity::class.java)
-            intent.putExtra("emoji_url", BASE_URL)
             startActivity(intent)
         }
 
         binding.btnEvents.setOnClickListener {
             val intent = Intent(this, AllEventsActivity::class.java)
-            intent.putExtra("event_url", BASE_URL)
             startActivity(intent)
 
         }
 
         binding.btnGists.setOnClickListener {
             val intent = Intent(this, AllGistsActivity::class.java)
-            intent.putExtra("gist_url", BASE_URL)
             startActivity(intent)
         }
 
