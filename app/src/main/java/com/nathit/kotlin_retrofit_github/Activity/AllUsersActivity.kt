@@ -24,7 +24,6 @@ class AllUsersActivity : AppCompatActivity() {
     private lateinit var linearLayoutManager: LinearLayoutManager
     private lateinit var rv: RecyclerView
 
-
     var TAG = "AllUsersActivity"
 
     override fun onCreate(savedInstanceState: Bundle?) {
