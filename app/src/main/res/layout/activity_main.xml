@@ -21,17 +21,19 @@
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
+            android:fontFamily="@font/mnn"
             android:gravity="center"
             android:hint="@string/loading"
             android:padding="10dp"
             android:text="@{viewModel.title}"
-            android:textSize="25sp" />
+            android:textSize="22sp"
+            android:textStyle="bold" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
             android:layout_below="@id/tvSample"
+            android:layout_margin="10dp"
             android:orientation="vertical">
 
             <Button
@@ -42,6 +44,7 @@
                 android:layout_weight="1"
                 android:backgroundTint="#8BC34A"
                 android:elevation="3dp"
+                android:fontFamily="@font/mnn"
                 android:hint="@string/loading"
                 android:padding="40dp"
                 android:text="@{viewModel.btnUser}"
@@ -49,46 +52,50 @@
                 android:textSize="20sp" />
 
             <Button
-                    android:id="@+id/btnEmojis"
-                    style="?android:attr/buttonBarButtonStyle"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:backgroundTint="#03A9F4"
-                    android:elevation="3dp"
-                    android:hint="@string/loading"
-                    android:padding="40dp"
-                    android:text="@{viewModel.btnEmojis}"
-                    android:textColor="@color/white"
-                    android:textSize="20sp" />
+                android:id="@+id/btnEmojis"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="#03A9F4"
+                android:elevation="3dp"
+                android:fontFamily="@font/mnn"
+                android:hint="@string/loading"
+                android:padding="40dp"
+                android:text="@{viewModel.btnEmojis}"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
 
-                <Button
-                    android:id="@+id/btnEvents"
-                    style="?android:attr/buttonBarButtonStyle"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:backgroundTint="#E91E63"
-                    android:elevation="3dp"
-                    android:hint="@string/loading"
-                    android:padding="40dp"
-                    android:text="@{viewModel.btnEvents}"
-                    android:textColor="@color/white"
-                    android:textSize="20sp" />
+            <Button
+                android:id="@+id/btnEvents"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="#E91E63"
+                android:elevation="3dp"
+                android:fontFamily="@font/mnn"
+                android:hint="@string/loading"
+                android:padding="40dp"
+                android:text="@{viewModel.btnEvents}"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
 
-                <Button
-                    android:id="@+id/btnGists"
-                    style="?android:attr/buttonBarButtonStyle"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:backgroundTint="#FFEB3B"
-                    android:elevation="3dp"
-                    android:hint="@string/loading"
-                    android:padding="40dp"
-                    android:text="@{viewModel.btnGists}"
-                    android:textColor="@color/white"
-                    android:textSize="20sp" />
+            <Button
+                android:id="@+id/btnGists"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="1"
+                android:backgroundTint="#3F51B5"
+                android:elevation="3dp"
+                android:fontFamily="@font/mnn"
+                android:hint="@string/loading"
+                android:padding="40dp"
+                android:text="@{viewModel.btnGists}"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
 
         </LinearLayout>
 
