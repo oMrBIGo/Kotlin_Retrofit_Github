@@ -9,7 +9,4 @@ interface ApiInterface {
     @GET("users")
     fun getUserData(): Call<List<UserModelItem>>
 
-    @GET("emojis")
-    fun getEmojisData(): Call<List<EmojiModelItem>>
-
 }

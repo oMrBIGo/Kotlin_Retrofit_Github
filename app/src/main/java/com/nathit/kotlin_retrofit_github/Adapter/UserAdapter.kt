@@ -14,6 +14,7 @@ import com.nathit.kotlin_retrofit_github.Adapter.UserAdapter.*
 import com.nathit.kotlin_retrofit_github.R
 import com.nathit.kotlin_retrofit_github.UserModelItem
 import org.w3c.dom.Text
+import java.util.logging.Handler as Handler1
 
 class UserAdapter(private val context: Context, private val users_List: List<UserModelItem>) :
 
