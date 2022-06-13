@@ -12,7 +12,5 @@ class Model : ViewModel() {
     val btnEvents = MutableLiveData<String>("กิจกรรม")
     val btnGists = MutableLiveData<String>("กระทู้")
 
-    //AllUsersActivity
-    val btnHtml = MutableLiveData<String>("ไปที่เว็บไซต์")
 
 }

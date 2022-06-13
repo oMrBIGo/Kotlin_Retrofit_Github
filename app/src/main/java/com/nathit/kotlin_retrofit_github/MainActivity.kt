@@ -2,10 +2,8 @@ package com.nathit.kotlin_retrofit_github
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.nathit.kotlin_retrofit_github.databinding.ActivityMainBinding
 
 const val BASE_URL = "https://api.github.com"
 
@@ -16,12 +14,10 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val binding =
-            DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main)
-        binding.viewModel = Model()
-        binding.lifecycleOwner = this@MainActivity
+        setContentView(R.layout.activity_main)
 
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottomNavigationView)
+
 
         bottomNavigationView.setOnItemSelectedListener {
             when(it.itemId) {
@@ -30,6 +26,8 @@ class MainActivity : AppCompatActivity() {
             }
             true
         }
+
+
 
         replaceFragment(homeFragment)
     }

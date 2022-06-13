@@ -1,13 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <item android:id="@+id/nav_user"
-        android:icon="@drawable/ic_user_click"
-        android:title="user"
-        android:iconTint="@drawable/ic_user"/>
+    <item
+        android:id="@+id/nav_user"
+        android:icon="@drawable/icon_user"
+        android:title="user" />
 
-    <item android:id="@+id/nav_emoji"
-        android:icon="@drawable/ic_emoji_click"
-        android:title="user"
-        android:iconTint="@drawable/ic_emoji"/>
+    <item
+        android:id="@+id/nav_emoji"
+        android:icon="@drawable/icon_emoji"
+        android:title="emoji" />
+
+    <item
+        android:id="@+id/nav_event"
+        android:icon="@drawable/icon_event"
+        android:title="event" />
+
+    <item
+        android:id="@+id/nav_gist"
+        android:icon="@drawable/icon_gist"
+        android:title="gist" />
+
 </menu>
