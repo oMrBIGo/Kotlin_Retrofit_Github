@@ -4,15 +4,21 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/nathi/Desktop/Android_Dev/Kotlin_Retrofit_Github/app/src/main/res/drawable/bg_radius.xml" value="0.1455" />
+        <entry key="..\:/Users/nathi/Desktop/Android_Dev/Kotlin_Retrofit_Github/app/src/main/res/drawable/bottom_nav_colors.xml" value="0.134" />
+        <entry key="..\:/Users/nathi/Desktop/Android_Dev/Kotlin_Retrofit_Github/app/src/main/res/drawable/ic_emoji.xml" value="0.1455" />
         <entry key="..\:/Users/nathi/Desktop/Android_Dev/Kotlin_Retrofit_Github/app/src/main/res/drawable/ic_event.xml" value="0.134" />
+        <entry key="..\:/Users/nathi/Desktop/Android_Dev/Kotlin_Retrofit_Github/app/src/main/res/drawable/ic_event_click.xml" value="0.1455" />
         <entry key="..\:/Users/nathi/Desktop/Android_Dev/Kotlin_Retrofit_Github/app/src/main/res/drawable/progress_anim.xml" value="0.175" />
         <entry key="..\:/Users/nathi/Desktop/Android_Dev/Kotlin_Retrofit_Github/app/src/main/res/layout/activity_all_emoji.xml" value="0.2601851851851852" />
         <entry key="..\:/Users/nathi/Desktop/Android_Dev/Kotlin_Retrofit_Github/app/src/main/res/layout/activity_all_events.xml" value="0.2601851851851852" />
         <entry key="..\:/Users/nathi/Desktop/Android_Dev/Kotlin_Retrofit_Github/app/src/main/res/layout/activity_all_users.xml" value="0.3109375" />
-        <entry key="..\:/Users/nathi/Desktop/Android_Dev/Kotlin_Retrofit_Github/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/nathi/Desktop/Android_Dev/Kotlin_Retrofit_Github/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/Users/nathi/Desktop/Android_Dev/Kotlin_Retrofit_Github/app/src/main/res/layout/fragment_emoji.xml" value="0.13148148148148148" />
+        <entry key="..\:/Users/nathi/Desktop/Android_Dev/Kotlin_Retrofit_Github/app/src/main/res/layout/fragment_home.xml" value="0.33" />
         <entry key="..\:/Users/nathi/Desktop/Android_Dev/Kotlin_Retrofit_Github/app/src/main/res/layout/progress_anim.xml" value="0.1" />
         <entry key="..\:/Users/nathi/Desktop/Android_Dev/Kotlin_Retrofit_Github/app/src/main/res/layout/user_item.xml" value="0.33" />
+        <entry key="..\:/Users/nathi/Desktop/Android_Dev/Kotlin_Retrofit_Github/app/src/main/res/menu-v26/nav_menu.xml" value="0.13148148148148148" />
+        <entry key="..\:/Users/nathi/Desktop/Android_Dev/Kotlin_Retrofit_Github/app/src/main/res/menu/nav_menu.xml" value="0.13148148148148148" />
         <entry key="..\:/Users/nathi/Desktop/Android_Dev/Kotlin_Retrofit_Github/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1455" />
       </map>
     </option>
