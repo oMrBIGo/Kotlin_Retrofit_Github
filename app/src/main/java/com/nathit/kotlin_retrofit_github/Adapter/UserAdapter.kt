@@ -2,9 +2,12 @@ package com.nathit.kotlin_retrofit_github.Adapter
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.content.Intent
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
@@ -21,6 +24,7 @@ class UserAdapter(private val context: Context, private val users_List: List<Use
         var titleTv: TextView = itemView.findViewById(R.id.titleTv)
         var photoTv: ImageView = itemView.findViewById(R.id.photoIv)
         var nodeIdTv: TextView = itemView.findViewById(R.id.nodeIdTv)
+        var btnHtml: Button = itemView.findViewById(R.id.btnHtml)
 
     }
 
@@ -40,6 +44,15 @@ class UserAdapter(private val context: Context, private val users_List: List<Use
             .error(R.drawable.progress_anim)
             .into(holder.photoTv)
         holder.nodeIdTv.text = "nodeID: " + users_List[position].node_id
+
+        holder.btnHtml.setOnClickListener {
+            val url = users_List[position].html_url
+            val intent = Intent(Intent.ACTION_VIEW)
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+            intent.data = Uri.parse(url)
+            context.startActivity(intent)
+        }
+
     }
 
     override fun getItemCount(): Int {
