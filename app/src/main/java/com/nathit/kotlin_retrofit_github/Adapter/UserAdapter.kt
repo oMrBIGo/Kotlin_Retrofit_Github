@@ -15,6 +15,7 @@ import com.bumptech.glide.Glide
 import com.nathit.kotlin_retrofit_github.Adapter.UserAdapter.*
 import com.nathit.kotlin_retrofit_github.R
 import com.nathit.kotlin_retrofit_github.UserModelItem
+import org.w3c.dom.Text
 
 class UserAdapter(private val context: Context, private val users_List: List<UserModelItem>):
     RecyclerView.Adapter<ViewHolder>() {
@@ -25,6 +26,7 @@ class UserAdapter(private val context: Context, private val users_List: List<Use
         var photoTv: ImageView = itemView.findViewById(R.id.photoIv)
         var nodeIdTv: TextView = itemView.findViewById(R.id.nodeIdTv)
         var btnHtml: Button = itemView.findViewById(R.id.btnHtml)
+        var typeTv: TextView = itemView.findViewById(R.id.TypeTv)
 
     }
 
@@ -43,8 +45,14 @@ class UserAdapter(private val context: Context, private val users_List: List<Use
             .placeholder(R.drawable.progress_anim)
             .error(R.drawable.progress_anim)
             .into(holder.photoTv)
-        holder.nodeIdTv.text = "nodeID: " + users_List[position].node_id
-
+        holder.nodeIdTv.text = "nodeID: " + "\n" + users_List[position].node_id
+        if (users_List[position].type == "User") {
+            holder.typeTv.text = "ผู้ใช้งาน"
+        } else if (users_List[position].type == "Organization"){
+            holder.typeTv.text = "องค์กร"
+        } else {
+            holder.typeTv.text = "ไม่พบข้อมูล"
+        }
         holder.btnHtml.setOnClickListener {
             val url = users_List[position].html_url
             val intent = Intent(Intent.ACTION_VIEW)
