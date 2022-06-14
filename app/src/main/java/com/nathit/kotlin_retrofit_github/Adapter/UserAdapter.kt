@@ -26,7 +26,6 @@ class UserAdapter(private val context: Context, private val users_List: List<Use
         var photoTv: ImageView = itemView.findViewById(R.id.photoIv)
         var nodeIdTv: TextView = itemView.findViewById(R.id.nodeIdTv)
         var btnHtml: Button = itemView.findViewById(R.id.btnHtml)
-        var typeTv: TextView = itemView.findViewById(R.id.TypeTv)
         var linear_2: LinearLayout = itemView.findViewById(R.id.linear_2)
         var linear_3: LinearLayout = itemView.findViewById(R.id.linear_3)
         var linear_4: LinearLayout = itemView.findViewById(R.id.linear_4)
@@ -43,8 +42,7 @@ class UserAdapter(private val context: Context, private val users_List: List<Use
 
     @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.uidTv.text = "ไอดี: " + users_List[position].id.toString()
-        holder.titleTv.text = "ชื่อผู้ใช้งาน: " + users_List[position].login
+        holder.titleTv.text = "username: " + users_List[position].login
         Glide.with(context)
             .load(users_List[position].avatar_url)
             .centerCrop()
@@ -63,7 +61,6 @@ class UserAdapter(private val context: Context, private val users_List: List<Use
 
             }
             holder.btnHide.setOnClickListener {
-                holder.btnShow.text = "แสดงข้อมูล"
                 holder.linear_2.visibility = View.GONE
                 holder.linear_3.visibility = View.GONE
                 holder.linear_4.visibility = View.GONE
@@ -74,11 +71,11 @@ class UserAdapter(private val context: Context, private val users_List: List<Use
 
         holder.nodeIdTv.text = "nodeID: " + "\n" + users_List[position].node_id
         if (users_List[position].type == "User") {
-            holder.typeTv.text = "ผู้ใช้งาน"
+            holder.uidTv.text = "ID:"+users_List[position].id.toString() +" | " + "Member"
         } else if (users_List[position].type == "Organization") {
-            holder.typeTv.text = "องค์กร"
+            holder.uidTv.text = "ID:"+users_List[position].id.toString() +" | " + "Admin"
         } else {
-            holder.typeTv.text = "ไม่พบข้อมูล"
+            holder.uidTv.text = "Found Data!"
         }
         holder.btnHtml.setOnClickListener {
             val url = users_List[position].html_url
