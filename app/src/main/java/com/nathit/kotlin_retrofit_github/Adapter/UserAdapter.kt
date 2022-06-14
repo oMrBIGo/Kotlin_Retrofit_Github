@@ -28,7 +28,6 @@ class UserAdapter(private val context: Context, private val users_List: List<Use
         var btnHtml: Button = itemView.findViewById(R.id.btnHtml)
         var linear_2: LinearLayout = itemView.findViewById(R.id.linear_2)
         var linear_3: LinearLayout = itemView.findViewById(R.id.linear_3)
-        var linear_4: LinearLayout = itemView.findViewById(R.id.linear_4)
         var linear_5: LinearLayout = itemView.findViewById(R.id.linear_5)
         var btnShow: Button = itemView.findViewById(R.id.btnShow)
         var btnHide: Button = itemView.findViewById(R.id.btnHide)
@@ -54,7 +53,6 @@ class UserAdapter(private val context: Context, private val users_List: List<Use
             holder.btnShow.setOnClickListener {
                 holder.linear_2.visibility = View.VISIBLE
                 holder.linear_3.visibility = View.VISIBLE
-                holder.linear_4.visibility = View.VISIBLE
                 holder.linear_5.visibility = View.VISIBLE
                 holder.btnShow.visibility = View.GONE
                 holder.btnHide.visibility = View.VISIBLE
@@ -63,7 +61,6 @@ class UserAdapter(private val context: Context, private val users_List: List<Use
             holder.btnHide.setOnClickListener {
                 holder.linear_2.visibility = View.GONE
                 holder.linear_3.visibility = View.GONE
-                holder.linear_4.visibility = View.GONE
                 holder.linear_5.visibility = View.GONE
                 holder.btnShow.visibility = View.VISIBLE
                 holder.btnHide.visibility = View.GONE
