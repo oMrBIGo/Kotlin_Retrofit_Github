@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import android.widget.*
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.nathit.kotlin_retrofit_github.Activity.ProfileActivity
 import com.nathit.kotlin_retrofit_github.Adapter.UserAdapter.*
 import com.nathit.kotlin_retrofit_github.R
 import com.nathit.kotlin_retrofit_github.UserModelItem
@@ -31,6 +32,9 @@ class UserAdapter(private val context: Context, private val users_List: List<Use
         var linear_5: LinearLayout = itemView.findViewById(R.id.linear_5)
         var btnShow: Button = itemView.findViewById(R.id.btnShow)
         var btnHide: Button = itemView.findViewById(R.id.btnHide)
+
+        var btnProFile: Button = itemView.findViewById(R.id.btnProFile)
+
 
     }
 
@@ -79,6 +83,12 @@ class UserAdapter(private val context: Context, private val users_List: List<Use
             val intent = Intent(Intent.ACTION_VIEW)
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
             intent.data = Uri.parse(url)
+            context.startActivity(intent)
+        }
+
+        holder.btnProFile.setOnClickListener {
+            val intent = Intent(context,ProfileActivity::class.java)
+            intent.putExtra("profile_url", users_List[position].url)
             context.startActivity(intent)
         }
 
