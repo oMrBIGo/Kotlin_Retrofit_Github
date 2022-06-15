@@ -1,15 +1,19 @@
 package com.nathit.kotlin_retrofit_github.Activity
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.nathit.kotlin_retrofit_github.Adapter.ReposAdapter
 import com.nathit.kotlin_retrofit_github.ApiReposInterface
+import com.nathit.kotlin_retrofit_github.MainActivity
 import com.nathit.kotlin_retrofit_github.R
 import com.nathit.kotlin_retrofit_github.ReposModel
+import kotlinx.android.synthetic.main.activity_repos.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -26,6 +30,14 @@ class ReposActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_repos)
+        setSupportActionBar(toolbar)
+        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+        supportActionBar!!.setDisplayShowHomeEnabled(true)
+
+        toolbar.setNavigationOnClickListener {
+            startActivity(Intent(this,MainActivity::class.java))
+            finish()
+        }
 
         val url = intent.getStringExtra("repos_url")
         rvpos = findViewById(R.id.rvpos)
@@ -56,8 +68,6 @@ class ReposActivity : AppCompatActivity() {
             override fun onFailure(call: Call<List<ReposModel>>, t: Throwable) {
                 Log.d("RequestCall", "Request failed")
             }
-
         })
     }
-
 }
