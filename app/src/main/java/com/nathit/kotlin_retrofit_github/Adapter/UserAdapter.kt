@@ -14,71 +14,67 @@ import com.nathit.kotlin_retrofit_github.Activity.ProfileActivity
 import com.nathit.kotlin_retrofit_github.Adapter.UserAdapter.*
 import com.nathit.kotlin_retrofit_github.R
 import com.nathit.kotlin_retrofit_github.UserModelItem
+import com.nathit.kotlin_retrofit_github.databinding.UserItemBinding
 import org.w3c.dom.Text
 import java.util.logging.Handler as Handler1
 
 class UserAdapter(private val context: Context, private val users_List: List<UserModelItem>) :
-
     RecyclerView.Adapter<ViewHolder>() {
 
-    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        var uidTv: TextView = itemView.findViewById(R.id.uIdTv)
-        var titleTv: TextView = itemView.findViewById(R.id.titleTv)
-        var photoTv: ImageView = itemView.findViewById(R.id.photoIv)
-        var nodeIdTv: TextView = itemView.findViewById(R.id.nodeIdTv)
-        var btnHtml: Button = itemView.findViewById(R.id.btnHtml)
-        var linear_2: LinearLayout = itemView.findViewById(R.id.linear_2)
-        var linear_3: LinearLayout = itemView.findViewById(R.id.linear_3)
-        var linear_5: LinearLayout = itemView.findViewById(R.id.linear_5)
-        var btnShow: Button = itemView.findViewById(R.id.btnShow)
-        var btnHide: Button = itemView.findViewById(R.id.btnHide)
 
-        var btnProFile: Button = itemView.findViewById(R.id.btnProFile)
+    class ViewHolder(val binding: UserItemBinding) : RecyclerView.ViewHolder(binding.root) {
 
+        fun bind(data: UserModelItem) {
+            binding.userData = data
+            binding.executePendingBindings()
+        }
 
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val itemView = LayoutInflater.from(context).inflate(R.layout.user_item, parent, false)
-        return ViewHolder(itemView)
+        val layoutInflater = LayoutInflater.from(parent.context)
+        val binding = UserItemBinding.inflate(layoutInflater)
+        return ViewHolder(binding)
     }
 
     @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.titleTv.text = "username: " + users_List[position].login
+
+        holder.binding.titleTv.text = "username: " + users_List[position].login
+
         Glide.with(context)
             .load(users_List[position].avatar_url)
             .centerCrop()
             .placeholder(R.drawable.progress_anim)
             .error(R.drawable.progress_anim)
-            .into(holder.photoTv)
+            .into(holder.binding.photoIv)
+
+        holder.binding.btnShow.setOnClickListener {
+            holder.binding.linear2.visibility = View.VISIBLE
+            holder.binding.linear3.visibility = View.VISIBLE
+            holder.binding.linear5.visibility = View.VISIBLE
+            holder.binding.btnShow.visibility = View.GONE
+            holder.binding.btnHide.visibility = View.VISIBLE
 
 
-            holder.btnShow.setOnClickListener {
-                holder.linear_2.visibility = View.VISIBLE
-                holder.linear_3.visibility = View.VISIBLE
-                holder.linear_5.visibility = View.VISIBLE
-                holder.btnShow.visibility = View.GONE
-                holder.btnHide.visibility = View.VISIBLE
-
-            }
-            holder.btnHide.setOnClickListener {
-                holder.linear_2.visibility = View.GONE
-                holder.linear_3.visibility = View.GONE
-                holder.linear_5.visibility = View.GONE
-                holder.btnShow.visibility = View.VISIBLE
-                holder.btnHide.visibility = View.GONE
-            }
-
-        holder.nodeIdTv.text = "nodeID: " + "\n" + users_List[position].node_id
-        if (users_List[position].type == "User") {
-            holder.uidTv.text = "ID:"+users_List[position].id.toString() +" | " + "Member"
-        } else if (users_List[position].type == "Organization") {
-            holder.uidTv.text = "ID:"+users_List[position].id.toString() +" | " + "Admin"
-        } else {
-            holder.uidTv.text = "Found Data!"
         }
-        holder.btnHtml.setOnClickListener {
+        holder.binding.btnHide.setOnClickListener {
+            holder.binding.linear2.visibility = View.GONE
+            holder.binding.linear3.visibility = View.GONE
+            holder.binding.linear5.visibility = View.GONE
+            holder.binding.btnShow.visibility = View.VISIBLE
+            holder.binding.btnHide.visibility = View.GONE
+        }
+
+        holder.binding.nodeIdTv.text = "nodeID: " + "\n" + users_List[position].node_id
+        if (users_List[position].type == "User") {
+            holder.binding.uIdTv.text = "ID:"+users_List[position].id.toString() +" | " + "Member"
+        } else if (users_List[position].type == "Organization") {
+            holder.binding.uIdTv.text = "ID:"+users_List[position].id.toString() +" | " + "Admin"
+        } else {
+            holder.binding.uIdTv.text = "Found Data!"
+        }
+        holder.binding.btnHtml.setOnClickListener {
             val url = users_List[position].html_url
             val intent = Intent(Intent.ACTION_VIEW)
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
@@ -86,7 +82,7 @@ class UserAdapter(private val context: Context, private val users_List: List<Use
             context.startActivity(intent)
         }
 
-        holder.btnProFile.setOnClickListener {
+        holder.binding.btnProFile.setOnClickListener {
             val intent = Intent(context,ProfileActivity::class.java)
             intent.putExtra("profile_url", users_List[position].url)
             context.startActivity(intent)
@@ -97,4 +93,6 @@ class UserAdapter(private val context: Context, private val users_List: List<Use
     override fun getItemCount(): Int {
         return users_List.size
     }
+
+
 }
