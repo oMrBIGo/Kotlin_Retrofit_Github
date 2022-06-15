@@ -5,7 +5,7 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
-const val BASE_URL = "https://api.github.com"
+const val BASE_URL = "https://api.github.com/"
 
 class MainActivity : AppCompatActivity() {
 

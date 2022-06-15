@@ -2,7 +2,6 @@ package com.nathit.kotlin_retrofit_github
 
 import android.annotation.SuppressLint
 import android.os.Bundle
-import android.os.Handler
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.nathit.kotlin_retrofit_github.Adapter.UserAdapter
+import kotlinx.android.synthetic.main.fragment_home.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -38,7 +38,7 @@ class HomeFragment : Fragment() {
         linearLayoutManager = LinearLayoutManager(context)
         rv.layoutManager = linearLayoutManager
 
-        mSwipeRefreshLayout = view.findViewById<SwipeRefreshLayout>(R.id.swipe_refresh_layout)
+        mSwipeRefreshLayout = view.findViewById(R.id.swipe_refresh_layout)
         mSwipeRefreshLayout!!.setOnRefreshListener {
             getData()
             mSwipeRefreshLayout!!.isRefreshing = false
@@ -59,20 +59,20 @@ class HomeFragment : Fragment() {
 
         val retrofitData = retrofitBuilder.getUserData()
 
-        retrofitData.enqueue(object : Callback<List<UserModelItem>?> {
+        retrofitData.enqueue(object : Callback<List<UserModel>?> {
             @SuppressLint("NotifyDataSetChanged")
             override fun onResponse(
-                call: Call<List<UserModelItem>?>,
-                response: Response<List<UserModelItem>?>
+                call: Call<List<UserModel>?>,
+                response: Response<List<UserModel>?>
             ) {
-                val responseBody = response.body()!!
-                userAdapter = UserAdapter(activity!!.applicationContext, responseBody)
+                val responseBody = response.body()
+                userAdapter = UserAdapter(activity!!.applicationContext, responseBody!!)
                 userAdapter.notifyDataSetChanged()
                 rv.adapter = userAdapter
 
             }
 
-            override fun onFailure(call: Call<List<UserModelItem>?>, t: Throwable) {
+            override fun onFailure(call: Call<List<UserModel>?>, t: Throwable) {
                 Toast.makeText(context, "Error"+t.message, Toast.LENGTH_SHORT).show()
             }
 

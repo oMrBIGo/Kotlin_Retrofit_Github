@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Kotlin_Retrofit_Github">
         <activity
-            android:name=".Activity.ProfileActivity"
+            android:name=".Activity.ReposActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
