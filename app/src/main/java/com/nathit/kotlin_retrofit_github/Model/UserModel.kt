@@ -1,4 +1,4 @@
-package com.nathit.kotlin_retrofit_github
+package com.nathit.kotlin_retrofit_github.Model
 
 data class UserModel(
     val avatar_url: String,

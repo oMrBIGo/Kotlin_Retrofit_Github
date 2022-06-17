@@ -1,9 +1,12 @@
-package com.nathit.kotlin_retrofit_github
+package com.nathit.kotlin_retrofit_github.Activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.nathit.kotlin_retrofit_github.Fragment.EventFragment
+import com.nathit.kotlin_retrofit_github.Fragment.HomeFragment
+import com.nathit.kotlin_retrofit_github.R
 
 const val BASE_URL = "https://api.github.com/"
 

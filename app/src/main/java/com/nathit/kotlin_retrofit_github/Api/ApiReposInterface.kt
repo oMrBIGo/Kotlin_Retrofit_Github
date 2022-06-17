@@ -1,5 +1,6 @@
-package com.nathit.kotlin_retrofit_github
+package com.nathit.kotlin_retrofit_github.Api
 
+import com.nathit.kotlin_retrofit_github.Model.ReposModel
 import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

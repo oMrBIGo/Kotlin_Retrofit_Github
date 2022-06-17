@@ -1,4 +1,4 @@
-package com.nathit.kotlin_retrofit_github
+package com.nathit.kotlin_retrofit_github.Fragment
 
 import android.annotation.SuppressLint
 import android.app.ProgressDialog
@@ -12,7 +12,10 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.nathit.kotlin_retrofit_github.Adapter.UserAdapter
-import kotlinx.android.synthetic.main.fragment_home.*
+import com.nathit.kotlin_retrofit_github.Api.ApiInterface
+import com.nathit.kotlin_retrofit_github.BASE_URL
+import com.nathit.kotlin_retrofit_github.R
+import com.nathit.kotlin_retrofit_github.Model.UserModel
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

@@ -1,7 +1,6 @@
 package com.nathit.kotlin_retrofit_github.Adapter
 
 import android.annotation.SuppressLint
-import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
@@ -12,7 +11,7 @@ import com.bumptech.glide.Glide
 import com.nathit.kotlin_retrofit_github.Activity.ReposActivity
 import com.nathit.kotlin_retrofit_github.Adapter.UserAdapter.*
 import com.nathit.kotlin_retrofit_github.R
-import com.nathit.kotlin_retrofit_github.UserModel
+import com.nathit.kotlin_retrofit_github.Model.UserModel
 import com.nathit.kotlin_retrofit_github.databinding.UserItemBinding
 
 class UserAdapter(private val context: Context, private val users_List: List<UserModel>) :
@@ -39,7 +38,7 @@ class UserAdapter(private val context: Context, private val users_List: List<Use
     @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 
-        holder.binding.titleTv.text = "username: " + users_List[position].login
+        holder.bind(users_List[position])
 
         Glide.with(context)
             .load(users_List[position].avatar_url)
@@ -49,7 +48,6 @@ class UserAdapter(private val context: Context, private val users_List: List<Use
             .into(holder.binding.photoIv)
 
 
-        holder.binding.nodeIdTv.text = "nodeID: " + users_List[position].node_id
         if (users_List[position].type == "User") {
             holder.binding.uIdTv.text = "ID:"+users_List[position].id.toString() +" | " + "Member"
         } else if (users_List[position].type == "Organization") {

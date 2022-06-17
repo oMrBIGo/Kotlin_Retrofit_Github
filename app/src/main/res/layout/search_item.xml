@@ -3,9 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
-        <variable
-            name="searchData"
-            type="com.nathit.kotlin_retrofit_github.SearchModel" />
+
     </data>
 
     <RelativeLayout

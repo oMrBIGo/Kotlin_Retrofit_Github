@@ -6,7 +6,7 @@ import android.net.Uri
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.nathit.kotlin_retrofit_github.ReposModel
+import com.nathit.kotlin_retrofit_github.Model.ReposModel
 import com.nathit.kotlin_retrofit_github.databinding.ReposItemBinding
 import java.text.SimpleDateFormat
 
@@ -36,15 +36,10 @@ class ReposAdapter(private val context: Context, private val repos_List: List<Re
         val output_update_at : String = formatter.format(parser.parse(repos_List[position].updated_at))
         val output_pushed_at : String = formatter.format(parser.parse(repos_List[position].pushed_at))
 
-        holder.binding.nameTv.text = repos_List[position].name
-        holder.binding.descriptionTv.text = repos_List[position].description
-        holder.binding.languageTv.text = repos_List[position].language
+        holder.bind(repos_List[position])
         holder.binding.createTv.text = output_create_at
         holder.binding.updateTv.text = output_update_at
         holder.binding.pushedTv.text = output_pushed_at
-        holder.binding.starTv.text = repos_List[position].stargazers_count
-        holder.binding.forkTv.text = repos_List[position].forks_count
-        holder.binding.visibilityTv.text = repos_List[position].visibility
 
         holder.binding.clickToGithub.setOnClickListener {
             val url = repos_List[position].html_url

@@ -4,16 +4,14 @@ import android.app.ProgressDialog
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.nathit.kotlin_retrofit_github.Adapter.ReposAdapter
-import com.nathit.kotlin_retrofit_github.ApiReposInterface
-import com.nathit.kotlin_retrofit_github.MainActivity
+import com.nathit.kotlin_retrofit_github.Api.ApiReposInterface
 import com.nathit.kotlin_retrofit_github.R
-import com.nathit.kotlin_retrofit_github.ReposModel
+import com.nathit.kotlin_retrofit_github.Model.ReposModel
 import kotlinx.android.synthetic.main.activity_repos.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -56,7 +54,8 @@ class ReposActivity : AppCompatActivity() {
     }
 
     private fun getDataRepos() {
-        val apiReposInterface: ApiReposInterface = ApiReposInterface.retrofit.create(ApiReposInterface::class.java)
+        val apiReposInterface: ApiReposInterface = ApiReposInterface.retrofit.create(
+            ApiReposInterface::class.java)
         val url = intent.getStringExtra("repos_url")
         val call: Call<List<ReposModel>> = apiReposInterface.loadRepos(url)
 

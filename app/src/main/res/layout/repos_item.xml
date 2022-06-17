@@ -4,7 +4,7 @@
     <data>
         <variable
             name="reposData"
-            type="com.nathit.kotlin_retrofit_github.ReposModel" />
+            type="com.nathit.kotlin_retrofit_github.Model.ReposModel" />
     </data>
 
     <RelativeLayout
@@ -48,7 +48,7 @@
                         android:id="@+id/nameTv"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/loading"
+                        android:text="@{reposData.name}"
                         android:paddingStart="10dp"
                         android:paddingEnd="5dp"
                         android:textSize="16sp"
@@ -76,7 +76,8 @@
                         android:id="@+id/descriptionTv"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/loading"
+                        android:hint="Null Found!"
+                        android:text="@{reposData.description}"
                         android:paddingStart="10dp"
                         android:paddingEnd="5dp"
                         android:textSize="16sp"
@@ -104,7 +105,8 @@
                         android:id="@+id/languageTv"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/loading"
+                        android:hint="Null Found!"
+                        android:text="@{reposData.language}"
                         android:paddingStart="10dp"
                         android:paddingEnd="5dp"
                         android:textSize="16sp"
@@ -143,6 +145,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/loading"
+                        android:text="@{reposData.created_at}"
                         android:paddingStart="5dp"
                         android:paddingEnd="5dp"
                         android:textAlignment="center"
@@ -175,6 +178,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/loading"
+                        android:text="@{reposData.updated_at}"
                         android:paddingStart="5dp"
                         android:paddingEnd="5dp"
                         android:textAlignment="center"
@@ -207,6 +211,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/loading"
+                        android:text="@{reposData.pushed_at}"
                         android:paddingStart="5dp"
                         android:paddingEnd="5dp"
                         android:textAlignment="center"
@@ -243,6 +248,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:hint="@string/loading"
+                        android:text="@{reposData.stargazers_count}"
                         android:paddingStart="5dp"
                         android:textSize="12sp"
                         android:textStyle="bold" />
@@ -270,6 +276,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:hint="@string/loading"
+                        android:text="@{reposData.forks_count}"
                         android:paddingStart="5dp"
                         android:textSize="12sp"
                         android:textStyle="bold" />
@@ -298,6 +305,7 @@
                         android:layout_height="wrap_content"
                         android:hint="@string/loading"
                         android:paddingStart="5dp"
+                        android:text="@{reposData.visibility}"
                         android:textSize="12sp"
                         android:textStyle="bold" />
 
