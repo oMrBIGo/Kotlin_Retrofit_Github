@@ -1,6 +1,7 @@
 package com.nathit.kotlin_retrofit_github
 
 import android.annotation.SuppressLint
+import android.app.ProgressDialog
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -24,6 +25,7 @@ class HomeFragment : Fragment() {
     private lateinit var userAdapter: UserAdapter
     private lateinit var linearLayoutManager: LinearLayoutManager
     private lateinit var rv: RecyclerView
+    lateinit var loadingDialog : ProgressDialog
 
     var mSwipeRefreshLayout: SwipeRefreshLayout? = null
 
@@ -34,6 +36,7 @@ class HomeFragment : Fragment() {
     ): View {
         // Inflate the layout for this fragment
         val view: View = inflater.inflate(R.layout.fragment_home, container, false)
+
         rv = view.findViewById(R.id.rv)
         linearLayoutManager = LinearLayoutManager(context)
         rv.layoutManager = linearLayoutManager
@@ -51,6 +54,7 @@ class HomeFragment : Fragment() {
 
 
     private fun getData() {
+        loadingDialog = ProgressDialog.show(context,"กำลังโหลดข้อมูล","รอสักครู่...",true,false)
         val retrofitBuilder = Retrofit.Builder()
             .addConverterFactory(GsonConverterFactory.create())
             .baseUrl(BASE_URL)
@@ -65,6 +69,7 @@ class HomeFragment : Fragment() {
                 call: Call<List<UserModel>?>,
                 response: Response<List<UserModel>?>
             ) {
+                loadingDialog.dismiss()
                 val responseBody = response.body()
                 userAdapter = UserAdapter(activity!!.applicationContext, responseBody!!)
                 userAdapter.notifyDataSetChanged()
@@ -73,6 +78,7 @@ class HomeFragment : Fragment() {
             }
 
             override fun onFailure(call: Call<List<UserModel>?>, t: Throwable) {
+                loadingDialog.dismiss()
                 Toast.makeText(context, "Error"+t.message, Toast.LENGTH_SHORT).show()
             }
 

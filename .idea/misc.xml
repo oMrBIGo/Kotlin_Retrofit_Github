@@ -24,11 +24,13 @@
         <entry key="..\:/Users/nathi/Desktop/Android_Dev/Kotlin_Retrofit_Github/app/src/main/res/layout/activity_repos.xml" value="0.2" />
         <entry key="..\:/Users/nathi/Desktop/Android_Dev/Kotlin_Retrofit_Github/app/src/main/res/layout/emoji_item.xml" value="0.346875" />
         <entry key="..\:/Users/nathi/Desktop/Android_Dev/Kotlin_Retrofit_Github/app/src/main/res/layout/fragment_emoji.xml" value="0.33" />
-        <entry key="..\:/Users/nathi/Desktop/Android_Dev/Kotlin_Retrofit_Github/app/src/main/res/layout/fragment_home.xml" value="0.18" />
+        <entry key="..\:/Users/nathi/Desktop/Android_Dev/Kotlin_Retrofit_Github/app/src/main/res/layout/fragment_event.xml" value="0.2638888888888889" />
+        <entry key="..\:/Users/nathi/Desktop/Android_Dev/Kotlin_Retrofit_Github/app/src/main/res/layout/fragment_home.xml" value="0.15979381443298968" />
         <entry key="..\:/Users/nathi/Desktop/Android_Dev/Kotlin_Retrofit_Github/app/src/main/res/layout/github_profile.xml" value="0.2" />
         <entry key="..\:/Users/nathi/Desktop/Android_Dev/Kotlin_Retrofit_Github/app/src/main/res/layout/progress_anim.xml" value="0.1" />
         <entry key="..\:/Users/nathi/Desktop/Android_Dev/Kotlin_Retrofit_Github/app/src/main/res/layout/repos_item.xml" value="0.49377593360995853" />
         <entry key="..\:/Users/nathi/Desktop/Android_Dev/Kotlin_Retrofit_Github/app/src/main/res/layout/repos_profile.xml" value="0.67" />
+        <entry key="..\:/Users/nathi/Desktop/Android_Dev/Kotlin_Retrofit_Github/app/src/main/res/layout/search_item.xml" value="0.38425925925925924" />
         <entry key="..\:/Users/nathi/Desktop/Android_Dev/Kotlin_Retrofit_Github/app/src/main/res/layout/user_item.xml" value="0.33" />
         <entry key="..\:/Users/nathi/Desktop/Android_Dev/Kotlin_Retrofit_Github/app/src/main/res/menu-v26/nav_menu.xml" value="0.13148148148148148" />
         <entry key="..\:/Users/nathi/Desktop/Android_Dev/Kotlin_Retrofit_Github/app/src/main/res/menu/nav_header.xml" value="0.33611111111111114" />

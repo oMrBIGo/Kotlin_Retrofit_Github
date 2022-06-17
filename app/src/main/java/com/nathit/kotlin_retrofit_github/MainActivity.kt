@@ -10,6 +10,7 @@ const val BASE_URL = "https://api.github.com/"
 class MainActivity : AppCompatActivity() {
 
     private val homeFragment = HomeFragment()
+    private val eventFragment = EventFragment()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,6 +22,7 @@ class MainActivity : AppCompatActivity() {
         bottomNavigationView.setOnItemSelectedListener {
             when(it.itemId) {
                 R.id.nav_user -> replaceFragment(homeFragment)
+                R.id.nav_event -> replaceFragment(eventFragment)
             }
             true
         }

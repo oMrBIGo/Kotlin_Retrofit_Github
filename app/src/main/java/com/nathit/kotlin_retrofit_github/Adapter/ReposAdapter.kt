@@ -1,6 +1,5 @@
 package com.nathit.kotlin_retrofit_github.Adapter
 
-import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
@@ -23,8 +22,8 @@ class ReposAdapter(private val context: Context, private val repos_List: List<Re
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val layoutInterface = LayoutInflater.from(parent.context)
-        val binding = ReposItemBinding.inflate(layoutInterface)
+        val layoutInflater = LayoutInflater.from(parent.context)
+        val binding = ReposItemBinding.inflate(layoutInflater)
         return ViewHolder(binding)
     }
 
