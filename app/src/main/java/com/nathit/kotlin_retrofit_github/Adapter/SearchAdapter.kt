@@ -9,7 +9,7 @@ import com.nathit.kotlin_retrofit_github.SearchModel
 import com.nathit.kotlin_retrofit_github.databinding.SearchItemBinding
 
 
-class SearchAdapter(private val context: Context, private val search_List: List<Item>) :
+class SearchAdapter(private val context: Context, private val search_List: List<SearchModel>) :
         RecyclerView.Adapter<SearchAdapter.ViewHolder>() {
 
             class ViewHolder(val binding: SearchItemBinding) : RecyclerView.ViewHolder(binding.root) {
@@ -26,7 +26,8 @@ class SearchAdapter(private val context: Context, private val search_List: List<
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.binding.titleTv.text = "username: " + search_List[position].login
+        val items = search_List[position].items
+        holder.binding.titleTv.text = items[position].login
     }
 
     override fun getItemCount(): Int {

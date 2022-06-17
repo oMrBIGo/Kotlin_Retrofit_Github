@@ -1,5 +1,6 @@
 package com.nathit.kotlin_retrofit_github.Activity
 
+import android.app.ProgressDialog
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -24,6 +25,7 @@ class ReposActivity : AppCompatActivity() {
     private lateinit var reposAdapter: ReposAdapter
     private lateinit var linearLayoutManager: LinearLayoutManager
     private lateinit var rvpos: RecyclerView
+    lateinit var loadingDialog: ProgressDialog
 
     var mSwipeRefreshLayout: SwipeRefreshLayout? = null
 
@@ -34,23 +36,28 @@ class ReposActivity : AppCompatActivity() {
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         supportActionBar!!.setDisplayShowHomeEnabled(true)
 
+        loadingDialog = ProgressDialog.show(this, "กำลังโหลดข้อมูล","รอสักครู่...",true, false)
+
         toolbar.setNavigationOnClickListener {
             startActivity(Intent(this,MainActivity::class.java))
             finish()
         }
 
-        val url = intent.getStringExtra("repos_url")
         rvpos = findViewById(R.id.rvpos)
         linearLayoutManager = LinearLayoutManager(this)
         rvpos.layoutManager = linearLayoutManager
         mSwipeRefreshLayout = findViewById(R.id.swipe_refresh_layout)
         mSwipeRefreshLayout!!.setOnRefreshListener {
+            getDataRepos()
             mSwipeRefreshLayout!!.isRefreshing = false
         }
+        getDataRepos()
 
+    }
+
+    private fun getDataRepos() {
         val apiReposInterface: ApiReposInterface = ApiReposInterface.retrofit.create(ApiReposInterface::class.java)
-
-
+        val url = intent.getStringExtra("repos_url")
         val call: Call<List<ReposModel>> = apiReposInterface.loadRepos(url)
 
         call.enqueue(object: Callback<List<ReposModel>>{
@@ -58,6 +65,7 @@ class ReposActivity : AppCompatActivity() {
                 call: Call<List<ReposModel>>,
                 response: Response<List<ReposModel>>
             ) {
+                loadingDialog.dismiss()
                 val responseBody = response.body()!!
                 reposAdapter = ReposAdapter(applicationContext, responseBody)
                 reposAdapter.notifyDataSetChanged()
@@ -66,6 +74,7 @@ class ReposActivity : AppCompatActivity() {
             }
 
             override fun onFailure(call: Call<List<ReposModel>>, t: Throwable) {
+                loadingDialog.dismiss()
                 Log.d("RequestCall", "Request failed")
             }
         })
